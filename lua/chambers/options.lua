@@ -18,7 +18,3 @@ vim.opt.sidescrolloff = 8
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
 
-vim.api.nvim_exec([[
-  autocmd BufWritePre * :%s/\s\+$//e
-]], false)
-

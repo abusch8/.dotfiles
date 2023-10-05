@@ -20,3 +20,4 @@ require("lazy").setup({
     { "kyazdani42/nvim-tree.lua" },
     { "abusch8/nvim-nonicons", dependencies = { "nvim-tree/nvim-web-devicons" } },
 })
+
