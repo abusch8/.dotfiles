@@ -1,3 +1,4 @@
+require("chambers/autocmds")
 require("chambers/keymaps")
 require("chambers/lazy")
 require("chambers/options")
