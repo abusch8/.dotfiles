@@ -19,5 +19,6 @@ require("lazy").setup({
     { "lewis6991/gitsigns.nvim" },
     { "kyazdani42/nvim-tree.lua" },
     { "abusch8/nvim-nonicons", dependencies = { "nvim-tree/nvim-web-devicons" } },
+    { "akinsho/bufferline.nvim" },
 })
 

@@ -1,4 +1,5 @@
 vim.opt.number = true
+
 vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 vim.opt.signcolumn = "yes"
@@ -17,4 +18,6 @@ vim.opt.sidescrolloff = 8
 
 vim.opt.spell = true
 vim.opt.spelllang = "en_us"
+
+vim.opt.termguicolors = true
 
