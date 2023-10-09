@@ -7,7 +7,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { "folke/tokyonight.nvim" },
+    { "folke/tokyonight.nvim", priority = 1000 },
     { "nvim-treesitter/nvim-treesitter" },
     { "nvim-telescope/telescope.nvim", tag = "0.1.3", dependencies = { "nvim-lua/plenary.nvim" } },
     { "neovim/nvim-lspconfig" },
@@ -20,5 +20,6 @@ require("lazy").setup({
     { "kyazdani42/nvim-tree.lua" },
     { "abusch8/nvim-nonicons", dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "akinsho/bufferline.nvim" },
+    { "lukas-reineke/indent-blankline.nvim" },
 })
 

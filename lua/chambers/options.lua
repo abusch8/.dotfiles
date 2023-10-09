@@ -21,3 +21,5 @@ vim.opt.spelllang = "en_us"
 
 vim.opt.termguicolors = true
 
+vim.opt.title = true
+
