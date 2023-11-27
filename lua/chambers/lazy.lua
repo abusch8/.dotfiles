@@ -21,5 +21,7 @@ require("lazy").setup({
     { "abusch8/nvim-nonicons", dependencies = { "nvim-tree/nvim-web-devicons" } },
     { "akinsho/bufferline.nvim" },
     { "lukas-reineke/indent-blankline.nvim" },
+    { "toppair/peek.nvim", run = "deno task --quiet build:fast" },
+    { "edluffy/hologram.nvim" },
 })
 
