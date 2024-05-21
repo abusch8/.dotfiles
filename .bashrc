@@ -6,7 +6,7 @@
 [[ $- != *i* ]] && return
 
 alias ls="ls --color=auto"
-alias ll="ls -l"
+alias ll="ls -la"
 alias vim="nvim"
 alias open="dolphin"
 PS1="[\[\e[1;35m\]\u\[\e[00m\]@\[\e[1;35m\]\h\[\e[00m\] \W]\$ "
