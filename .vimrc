@@ -1,7 +1,3 @@
-" call plug#begin()
-" Plug 'ghifarit53/tokyonight-vim'
-" call plug#end()
-
 filetype plugin indent on
 syntax on
 
@@ -31,11 +27,6 @@ set title
 if (has("termguicolors"))
     set termguicolors
 endif
-
-" let g:tokyonight_style = 'night'
-" let g:tokyonight_enable_italic = 1
-"
-" colorscheme tokyonight
 
 set spell
 set spelllang=en_us
