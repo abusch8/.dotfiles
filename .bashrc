@@ -1,6 +1,9 @@
 [[ $- != *i* ]] && return
 
-PS1="[\[\e[1;35m\]\u\[\e[00m\]@\[\e[1;35m\]\h\[\e[00m\] \W]\$ "
+MAGENTA='\[\e[0;35m\]'
+RESET='\[\e[0m\]'
+
+PS1="$MAGENTA\u$RESET@$MAGENTA\h$RESET \W \$ "
 
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -la'
@@ -13,5 +16,5 @@ source /usr/share/nvm/init-nvm.sh
 
 export PATH="$HOME/.cargo/bin:$PATH"
 
-[ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+[ "$TERM" = 'xterm-kitty' ] && alias ssh='kitty +kitten ssh'
 
