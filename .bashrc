@@ -1,13 +1,7 @@
-#
-# ~/.bashrc
-#
-
-# If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
 alias ls="ls --color=auto"
 alias ll="ls -la"
-alias vim="nvim"
 alias open="dolphin"
 PS1="[\[\e[1;35m\]\u\[\e[00m\]@\[\e[1;35m\]\h\[\e[00m\] \W]\$ "
 source /usr/share/nvm/init-nvm.sh
@@ -22,3 +16,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 eval "$(thefuck --alias)"
 
 [ "$TERM" = "xterm-kitty" ] && alias ssh="kitty +kitten ssh"
+
