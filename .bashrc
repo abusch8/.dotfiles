@@ -1,9 +1,11 @@
 [[ $- != *i* ]] && return
 
-alias ls="ls --color=auto"
-alias ll="ls -la"
-alias open="dolphin"
 PS1="[\[\e[1;35m\]\u\[\e[00m\]@\[\e[1;35m\]\h\[\e[00m\] \W]\$ "
+
+alias ls="ls --color=auto"
+alias ll="ls --color=auto -la"
+alias open="dolphin"
+
 source /usr/share/nvm/init-nvm.sh
 
 # BEGIN_KITTY_SHELL_INTEGRATION
