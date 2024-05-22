@@ -10,8 +10,9 @@ set expandtab
 set autoindent
 set smartindent
 
-set smartcase
 set ignorecase
+set smartcase
+set incsearch
 set hlsearch
 
 set scrolloff=4
@@ -21,6 +22,9 @@ set nowrap
 set breakindent
 set formatoptions=l
 set lbr
+
+set showcmd
+set wildmenu
 
 set title
 
@@ -36,6 +40,15 @@ hi clear SpellCap
 
 hi SpellBad cterm=undercurl ctermfg=NONE guifg=NONE guisp=red gui=undercurl
 hi SpellCap cterm=undercurl ctermfg=None guifg=NONE guisp=blue gui=undercurl
+
+imap <C-BS> <C-W>
+imap <A-BS> <C-W>
+imap <C-Del> <C-O>dw
+imap <A-Del> <C-O>dw
+
+vnoremap p "_dP
+
+autocmd BufWritePre * %s/\s\+$//e
 
 " Styled and colored underline support
 let &t_AU = "\e[58:5:%dm"
@@ -82,6 +95,4 @@ let &t_ST = "\e[22;2t"
 let &t_RT = "\e[23;2t"
 
 let &t_ut=''
-
-autocmd BufWritePre * %s/\s\+$//e
 
