@@ -37,13 +37,10 @@ set spelllang=en_us
 
 hi clear SpellBad
 hi clear SpellCap
-
 hi SpellBad cterm=undercurl ctermfg=NONE guifg=NONE guisp=red gui=undercurl
 hi SpellCap cterm=undercurl ctermfg=None guifg=NONE guisp=blue gui=undercurl
 
-imap <C-BS> <C-W>
 imap <A-BS> <C-W>
-imap <C-Del> <C-O>dw
 imap <A-Del> <C-O>dw
 
 vnoremap p "_dP
