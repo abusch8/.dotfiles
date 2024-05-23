@@ -23,6 +23,11 @@ set breakindent
 set formatoptions=l
 set lbr
 
+set ttimeout
+set ttimeoutlen=1
+set ttyfast
+
+set ruler
 set showcmd
 set wildmenu
 
