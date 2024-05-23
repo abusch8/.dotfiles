@@ -6,7 +6,7 @@ RESET='\[\e[0m\]'
 PS1="$MAGENTA\u$RESET@$MAGENTA\h$RESET \W \$ "
 
 alias ls='ls --color=auto'
-alias ll='ls --color=auto -la'
+alias ll='ls --color=auto -l'
 
 alias open='dolphin'
 
