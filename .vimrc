@@ -35,17 +35,15 @@ set wildmenu
 
 set title
 
-if (has("termguicolors"))
-    set termguicolors
-endif
+set termguicolors
 
 set spell
 set spelllang=en_us
 
 hi clear SpellBad
 hi clear SpellCap
-hi SpellBad cterm=undercurl ctermfg=NONE guifg=NONE guisp=red gui=undercurl
-hi SpellCap cterm=undercurl ctermfg=None guifg=NONE guisp=blue gui=undercurl
+hi SpellBad cterm=undercurl ctermfg=NONE guifg=NONE gui=undercurl guisp=red
+hi SpellCap cterm=undercurl ctermfg=None guifg=NONE gui=undercurl guisp=blue
 
 imap <A-BS> <C-W>
 imap <A-Del> <C-O>dw
