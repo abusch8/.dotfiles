@@ -1,6 +1,8 @@
 filetype plugin indent on
 syntax on
 
+set nocompatible
+
 set number relativenumber
 set numberwidth=4
 

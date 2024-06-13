@@ -1,9 +1,10 @@
 [[ $- != *i* ]] && return
 
-MAGENTA='\[\e[0;35m\]'
+MAGENTA='\[\e[35m\]'
 RESET='\[\e[0m\]'
+BOLD='\[\e[1m\]'
 
-PS1="$MAGENTA\u$RESET@$MAGENTA\h$RESET \W \$ "
+PS1="[$MAGENTA\u$RESET@$MAGENTA\h$RESET \W]\$ $RESET"
 
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
