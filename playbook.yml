@@ -1,0 +1,39 @@
+---
+- name: .dotfiles
+  hosts: localhost
+  vars:
+    - current_shell: "{{ lookup('env', 'SHELL') }}"
+  tasks:
+
+  - name: Symlink .vimrc
+    ansible.builtin.file:
+      src: "{{ playbook_dir }}/.vimrc"
+      dest: ~/.vimrc
+      state: link
+
+  - name: Symlink .tmux.conf
+    ansible.builtin.file:
+      src: "{{ playbook_dir }}/.tmux.conf"
+      dest: ~/.bashrc
+      state: link
+
+  - name: Symlink .bashrc
+    ansible.builtin.file:
+      src: "{{ playbook_dir }}/.bashrc"
+      dest: ~/.bashrc
+      state: link
+    when: current_shell.endswith('bash')
+
+  - name: Symlink .zshrc
+    ansible.builtin.file:
+      src: "{{ playbook_dir }}/.zshrc"
+      dest: ~/.zshrc
+      state: link
+    when: current_shell.endswith('zsh')
+
+  - name: Symlink .config/kitty/
+    ansible.builtin.file:
+      src: "{{ playbook_dir }}/.config/kitty"
+      dest: ~/.config/kitty
+      state: link
+...

@@ -35,8 +35,12 @@ set title
 
 set termguicolors
 
-set spell
+" set spell
 set spelllang=en_us
+
+set noswapfile
+set nobackup
+set nowritebackup
 
 hi clear SpellBad
 hi clear SpellCap
