@@ -6,31 +6,26 @@
   vars_files:
     - secrets.yml
   tasks:
-    - name: Ensure packages are installed
-      ansible.builtin.package:
-        name:
-          - vim
-          - tmux
-          - kitty
-        state: present
-
     - name: Symlink .vimrc
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.vimrc"
         dest: ~/.vimrc
         state: link
+        force: true
 
     - name: Symlink .tmux.conf
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.tmux.conf"
         dest: ~/.bashrc
         state: link
+        force: true
 
     - name: Symlink .bashrc
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.bashrc"
         dest: ~/.bashrc
         state: link
+        force: true
       when: current_shell.endswith('bash')
 
     - name: Symlink .zshrc
@@ -38,6 +33,7 @@
         src: "{{ playbook_dir }}/.zshrc"
         dest: ~/.zshrc
         state: link
+        force: true
       when: current_shell.endswith('zsh')
 
     - name: Ensure .config directory exists
@@ -51,12 +47,14 @@
         src: "{{ playbook_dir }}/.config/kitty"
         dest: ~/.config/kitty
         state: link
+        force: true
 
     - name: Symlink .gitconfig
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.gitconfig"
         dest: ~/.gitconfig
         state: link
+        force: true
 
     - name: Ensure .ssh directory exists
       ansible.builtin.file:
