@@ -36,4 +36,10 @@
       src: "{{ playbook_dir }}/.config/kitty"
       dest: ~/.config/kitty
       state: link
+
+  - name: Symlink .gitconfig
+    ansible.builtin.file:
+      src: "{{ playbook_dir }}/.gitconfig"
+      dest: ~/.gitconfig
+      state: link
 ...
