@@ -9,13 +9,7 @@ PS1="[$MAGENTA\u$RESET@$MAGENTA\h$RESET \W]\$ $RESET"
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
 
-alias open='dolphin'
-
-eval "$(thefuck --alias)"
-
 source /usr/share/nvm/init-nvm.sh
 
 export PATH="$HOME/.cargo/bin:$PATH"
-
-[ "$TERM" = 'xterm-kitty' ] && alias ssh='kitty +kitten ssh'
 
