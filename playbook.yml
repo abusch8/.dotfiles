@@ -53,13 +53,13 @@
 
     - name: Deploy the private ssh key
       ansible.builtin.copy:
-        dest: ~/.ssh/id_ed25565
-        content: "{{ id_ed25565 }}"
+        dest: ~/.ssh/id_ed25519
+        content: "{{ id_ed25519 }}"
         mode: 0600
 
     - name: Deploy the public ssh key
       ansible.builtin.copy:
-        dest: ~/.ssh/id_ed25565.pub
-        content: "{{ id_ed25565_pub }}"
+        dest: ~/.ssh/id_ed25519.pub
+        content: "{{ id_ed25519_pub }}"
         mode: 0644
 ...
