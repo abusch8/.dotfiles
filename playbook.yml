@@ -6,6 +6,13 @@
   vars_files:
     - secrets.yml
   tasks:
+    - name: Ensure packages are installed
+      ansible.builtin.package:
+        name:
+          - vim
+          - tmux
+          - kitty
+        state: present
 
     - name: Symlink .vimrc
       ansible.builtin.file:
@@ -32,6 +39,12 @@
         dest: ~/.zshrc
         state: link
       when: current_shell.endswith('zsh')
+
+    - name: Ensure .config directory exists
+      ansible.builtin.file:
+        path: ~/.config
+        state: directory
+        mode: 0755
 
     - name: Symlink .config/kitty/
       ansible.builtin.file:
