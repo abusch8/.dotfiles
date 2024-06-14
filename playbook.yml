@@ -3,43 +3,63 @@
   hosts: localhost
   vars:
     - current_shell: "{{ lookup('env', 'SHELL') }}"
+  vars_files:
+    - secrets.yml
   tasks:
 
-  - name: Symlink .vimrc
-    ansible.builtin.file:
-      src: "{{ playbook_dir }}/.vimrc"
-      dest: ~/.vimrc
-      state: link
+    - name: Symlink .vimrc
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.vimrc"
+        dest: ~/.vimrc
+        state: link
 
-  - name: Symlink .tmux.conf
-    ansible.builtin.file:
-      src: "{{ playbook_dir }}/.tmux.conf"
-      dest: ~/.bashrc
-      state: link
+    - name: Symlink .tmux.conf
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.tmux.conf"
+        dest: ~/.bashrc
+        state: link
 
-  - name: Symlink .bashrc
-    ansible.builtin.file:
-      src: "{{ playbook_dir }}/.bashrc"
-      dest: ~/.bashrc
-      state: link
-    when: current_shell.endswith('bash')
+    - name: Symlink .bashrc
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.bashrc"
+        dest: ~/.bashrc
+        state: link
+      when: current_shell.endswith('bash')
 
-  - name: Symlink .zshrc
-    ansible.builtin.file:
-      src: "{{ playbook_dir }}/.zshrc"
-      dest: ~/.zshrc
-      state: link
-    when: current_shell.endswith('zsh')
+    - name: Symlink .zshrc
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.zshrc"
+        dest: ~/.zshrc
+        state: link
+      when: current_shell.endswith('zsh')
 
-  - name: Symlink .config/kitty/
-    ansible.builtin.file:
-      src: "{{ playbook_dir }}/.config/kitty"
-      dest: ~/.config/kitty
-      state: link
+    - name: Symlink .config/kitty/
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.config/kitty"
+        dest: ~/.config/kitty
+        state: link
 
-  - name: Symlink .gitconfig
-    ansible.builtin.file:
-      src: "{{ playbook_dir }}/.gitconfig"
-      dest: ~/.gitconfig
-      state: link
+    - name: Symlink .gitconfig
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.gitconfig"
+        dest: ~/.gitconfig
+        state: link
+
+    - name: Ensure .ssh directory exists
+      ansible.builtin.file:
+        path: ~/.ssh
+        state: directory
+        mode: 0700
+
+    - name: Deploy the private ssh key
+      ansible.builtin.copy:
+        dest: ~/.ssh/id_ed25565
+        content: "{{ id_ed25565 }}"
+        mode: 0600
+
+    - name: Deploy the public ssh key
+      ansible.builtin.copy:
+        dest: ~/.ssh/id_ed25565.pub
+        content: "{{ id_ed25565_pub }}"
+        mode: 0644
 ...
