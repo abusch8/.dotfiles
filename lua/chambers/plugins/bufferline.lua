@@ -1,7 +1,7 @@
-require("bufferline").setup({
-    options = {
-        themable = true,
-        separator_style = "slant",
-    },
-})
+-- require("bufferline").setup({
+--     options = {
+--         themable = true,
+--         separator_style = "slant",
+--     },
+-- })
 
