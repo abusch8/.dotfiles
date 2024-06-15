@@ -34,6 +34,11 @@ vim.opt.breakindent = true
 vim.opt.formatoptions = "l"
 vim.opt.lbr = true
 
+-- Adjust tty timeout and speed
+vim.opt.ttimeoutlen = 10
+vim.opt.ttimeout = true
+vim.opt.ttyfast = true
+
 -- Disable swap files and backups
 vim.opt.swapfile = false
 vim.opt.backup = false
