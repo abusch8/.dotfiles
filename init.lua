@@ -4,6 +4,7 @@ require("chambers/lazy")
 require("chambers/options")
 require("chambers/ui")
 
+require("chambers/plugins/autopairs")
 -- require("chambers/plugins/bufferline")
 require("chambers/plugins/cmp")
 require("chambers/plugins/gitsigns")

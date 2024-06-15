@@ -13,7 +13,9 @@ end
 
 vim.opt.rtp:prepend(lazypath)
 
-require("lazy").setup({
+local lazy = require("lazy")
+
+lazy.setup({
     { "folke/tokyonight.nvim", priority = 1000 },
     { "nvim-treesitter/nvim-treesitter" },
     { "nvim-telescope/telescope.nvim", tag = "0.1.3", dependencies = { "nvim-lua/plenary.nvim" } },
@@ -29,5 +31,6 @@ require("lazy").setup({
     { "akinsho/bufferline.nvim" },
     { "nvim-lualine/lualine.nvim" },
     { "lukas-reineke/indent-blankline.nvim" },
+    { "windwp/nvim-autopairs" },
 })
 
