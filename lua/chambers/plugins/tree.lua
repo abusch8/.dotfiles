@@ -1,5 +1,7 @@
 local tree = require("nvim-tree")
-local nonicons_extention = require("nvim-nonicons.extentions.nvim-tree")
+local nonicons = require("nvim-nonicons.extentions.nvim-tree")
+
+vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>", { noremap = true, silent = true })
 
 tree.setup({
     view = {
@@ -7,8 +9,20 @@ tree.setup({
     },
     renderer = {
         icons = {
-            glyphs = nonicons_extention.glyphs,
+            glyphs = nonicons.glyphs,
         },
+    },
+    actions = {
+        expand_all = {
+            exclude = { ".git", "dist", "target", "build" },
+        },
+    },
+    hijack_cursor = true,
+    sort = {
+        sorter = "extension",
+    },
+    diagnostics = {
+        enable = true,
     },
 })
 
