@@ -1,6 +1,6 @@
+local telescope = require("telescope")
 local builtin = require("telescope.builtin")
 local icons = require("nvim-nonicons")
-local telescope = require("telescope")
 
 vim.keymap.set("n", "<C-p>", ":lua require'telescope.builtin'.find_files({ previewer = false, layout_config = { width = 0.5, height = 0.5 } })<cr>")
 
