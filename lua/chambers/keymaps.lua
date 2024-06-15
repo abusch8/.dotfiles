@@ -1,14 +1,14 @@
 vim.g.mapleader = " "
 
-vim.api.nvim_set_keymap("i", "<C-BS>", "<C-W>", {})
-vim.api.nvim_set_keymap("i", "<A-BS>", "<C-W>", {})
+vim.keymap.set("i", "<C-BS>", "<C-W>")
+vim.keymap.set("i", "<A-BS>", "<C-W>")
 
-vim.api.nvim_set_keymap("i", "<C-Del>", "<C-o>dw", {})
-vim.api.nvim_set_keymap("i", "<A-Del>", "<C-o>dw", {})
+vim.keymap.set("i", "<C-Del>", "<C-o>dw")
+vim.keymap.set("i", "<A-Del>", "<C-o>dw")
 
-vim.api.nvim_set_keymap("n", "<S-y>", "yy", {})
+vim.keymap.set("v", "<C-Insert>", "\"+y")
 
-vim.api.nvim_set_keymap("n", "<leader>e", ":lua vim.diagnostic.open_float(0, {scope='line'})<CR>", { noremap = true, silent = true })
+vim.keymap.set("v", "p", "\"_dp")
 
-vim.api.nvim_set_keymap('v', '<C-Insert>', '"+y', { noremap = true, silent = true })
+vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float(0, { scope = "line" }) end)
 
