@@ -2,48 +2,54 @@ filetype plugin indent on
 syntax on
 
 set nocompatible
+set termguicolors
+set title
+set ruler
+set showcmd
+set wildmenu
 
+" Line numbers
 set number relativenumber
 set numberwidth=4
 
+" Tabs and indentation
 set tabstop=4
 set shiftwidth=4
 set expandtab
 set autoindent
 set smartindent
 
+" Search
 set ignorecase
 set smartcase
 set incsearch
 set hlsearch
 
+" Scroll off
 set scrolloff=4
 set sidescrolloff=8
 
+" Line wrap
 set nowrap
 set breakindent
 set formatoptions=l
 set lbr
 
+" Cursor lag tty fix
 set ttimeout
 set ttimeoutlen=1
 set ttyfast
 
-set ruler
-set showcmd
-set wildmenu
-
-set title
-
-set termguicolors
-
-set nospell
-set spelllang=en_us
-
+" Disable swap files and backups
 set noswapfile
 set nobackup
 set nowritebackup
 
+" Spellcheck
+set nospell
+set spelllang=en_us
+
+" Spellcheck under curls
 hi clear SpellBad
 hi clear SpellCap
 hi SpellBad cterm=undercurl ctermfg=NONE guifg=NONE gui=undercurl guisp=red
