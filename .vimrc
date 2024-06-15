@@ -3,6 +3,7 @@ syntax on
 
 set nocompatible
 set termguicolors
+
 set title
 set ruler
 set showcmd
@@ -35,9 +36,9 @@ set breakindent
 set formatoptions=l
 set lbr
 
-" Cursor lag tty fix
+" Key code timeout and tty speed
 set ttimeout
-set ttimeoutlen=1
+set ttimeoutlen=100
 set ttyfast
 
 " Disable swap files and backups
@@ -49,7 +50,7 @@ set nowritebackup
 set nospell
 set spelllang=en_us
 
-" Spellcheck under curls
+" Spellcheck undercurls
 hi clear SpellBad
 hi clear SpellCap
 hi SpellBad cterm=undercurl ctermfg=NONE guifg=NONE gui=undercurl guisp=red
@@ -57,6 +58,7 @@ hi SpellCap cterm=undercurl ctermfg=None guifg=NONE gui=undercurl guisp=blue
 
 vnoremap p "_dP
 
+" Clear trailing white space on write
 autocmd BufWritePre * %s/\s\+$//e
 
 " Styled and colored underline support
