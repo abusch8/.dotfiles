@@ -32,5 +32,6 @@ lazy.setup({
     { "nvim-lualine/lualine.nvim" },
     { "lukas-reineke/indent-blankline.nvim" },
     { "windwp/nvim-autopairs" },
+    { "numToStr/Comment.nvim" },
 })
 
