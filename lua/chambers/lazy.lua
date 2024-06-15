@@ -17,20 +17,26 @@ local lazy = require("lazy")
 
 lazy.setup({
     { "folke/tokyonight.nvim", priority = 1000 },
-    { "nvim-treesitter/nvim-treesitter" },
+    { "abusch8/nvim-nonicons", dependencies = { "nvim-tree/nvim-web-devicons" } },
+
     { "nvim-telescope/telescope.nvim", tag = "0.1.3", dependencies = { "nvim-lua/plenary.nvim" } },
+    { "nvim-lualine/lualine.nvim" },
+    { "kyazdani42/nvim-tree.lua" },
+
+    { "nvim-treesitter/nvim-treesitter" },
+    { "williamboman/mason.nvim" },
+    { "williamboman/mason-lspconfig.nvim" },
     { "neovim/nvim-lspconfig" },
+
     { "hrsh7th/cmp-nvim-lsp" },
     { "hrsh7th/cmp-buffer" },
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
     { "hrsh7th/nvim-cmp" },
-    { "lewis6991/gitsigns.nvim" },
-    { "kyazdani42/nvim-tree.lua" },
-    { "abusch8/nvim-nonicons", dependencies = { "nvim-tree/nvim-web-devicons" } },
-    { "akinsho/bufferline.nvim" },
-    { "nvim-lualine/lualine.nvim" },
+
     { "lukas-reineke/indent-blankline.nvim" },
+    { "akinsho/bufferline.nvim" },
+    { "lewis6991/gitsigns.nvim" },
     { "windwp/nvim-autopairs" },
     { "numToStr/Comment.nvim" },
 })
