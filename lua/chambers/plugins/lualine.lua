@@ -1,7 +1,10 @@
-require("lualine").setup({
+local lualine = require("lualine")
+
+lualine.setup({
     options = {
-        component_separators = { left = "", right = "" },
-        section_separators = { left = "", right = "" },
+        component_separators = "",
+        section_separators = "",
+        globalstatus = true,
     },
     sections = {
         lualine_a = { "mode" },
@@ -23,8 +26,9 @@ require("lualine").setup({
                 "filetype",
             },
         },
-        lualine_y = { "progress" },
+        lualine_y = { "progress", "selectioncount" },
         lualine_z = { "location" },
     },
+    extensions = { "nvim-tree" },
 })
 

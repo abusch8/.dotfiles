@@ -24,6 +24,7 @@ vim.opt.formatoptions = "l"
 vim.opt.lbr = true
 
 vim.opt.cursorline = true
+vim.opt.cmdheight = 0
 
 vim.opt.swapfile = false
 vim.opt.backup = false

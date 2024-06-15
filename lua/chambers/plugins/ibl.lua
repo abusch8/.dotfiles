@@ -1,2 +1,8 @@
--- require("ibl").setup({ scope = { enabled = false } })
+local ibl = require("ibl")
+
+ibl.setup({
+    scope = {
+        enabled = false,
+    },
+})
 

@@ -1,6 +1,10 @@
-require("nvim-treesitter.configs").setup({
-    ensure_installed = { "c", "rust", "typescript", "javascript", "lua", "markdown" },
+local treesitter = require("nvim-treesitter.configs")
+
+treesitter.setup({
+    ensure_installed = { "c", "rust", "typescript", "javascript", "lua", "markdown", "vim" },
     auto_install = true,
-    highlight = { enable = true },
+    highlight = {
+        enable = true,
+    },
 })
 
