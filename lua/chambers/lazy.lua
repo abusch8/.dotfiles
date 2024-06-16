@@ -22,6 +22,7 @@ lazy.setup({
     { "lewis6991/gitsigns.nvim" },
     { "windwp/nvim-autopairs" },
     { "numToStr/Comment.nvim" },
+    { "smjonas/inc-rename.nvim" },
     { "L3MON4D3/LuaSnip" },
 
     { "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
