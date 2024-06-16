@@ -1,8 +1,10 @@
 vim.cmd[[ filetype plugin indent on ]]
 vim.cmd[[ syntax enable ]]
 
-vim.opt.termguicolors = true
+vim.fn.setenv("BASH_ENV", "~/.aliasrc")
 
+-- Appearance
+vim.opt.termguicolors = true
 vim.opt.title = true
 vim.opt.cmdheight = 0
 vim.opt.cursorline = true

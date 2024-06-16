@@ -16,7 +16,8 @@ mason_lspconfig.setup({
 })
 
 local function lua_ls_setup()
-    local is_nvim_config = vim.loop.cwd():match("^" .. vim.fn.stdpath("config")) ~= nil
+    local cwd = vim.loop.cwd()
+    local is_nvim_config = cwd:find(".config/nvim") or cwd:find(".dotfiles")
 
     local settings = {
         Lua = {
