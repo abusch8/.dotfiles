@@ -56,6 +56,13 @@
         state: link
         force: true
 
+    - name: Symlink .config/nvim/
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.config/nvim"
+        dest: ~/.config/nvim
+        state: link
+        force: true
+
     - name: Symlink .gitconfig
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.gitconfig"
