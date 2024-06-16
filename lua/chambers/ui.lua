@@ -8,7 +8,7 @@ local function on_highlights(hl, c)
         fg = hl.LineNr.fg,
     }
     hl.NvimTreeEndOfBuffer = {
-        fg = c.bg,
+        fg = c.bg_dark,
     }
 end
 
