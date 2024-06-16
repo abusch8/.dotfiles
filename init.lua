@@ -1,6 +1,6 @@
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
-if not vim.loop.fs_stat(lazypath) then
+if not (vim.uv or vim.loop).fs_stat(lazypath) then
     vim.fn.system({
         "git",
         "clone",
@@ -24,7 +24,7 @@ require("chambers/plugins/cmp")
 require("chambers/plugins/comment")
 require("chambers/plugins/gitsigns")
 require("chambers/plugins/harpoon")
-require("chambers/plugins/ls")
+require("chambers/plugins/luasnip")
 require("chambers/plugins/lualine")
 require("chambers/plugins/mason")
 require("chambers/plugins/telescope")
