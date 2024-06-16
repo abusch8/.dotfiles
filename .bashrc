@@ -8,6 +8,7 @@ PS1="[$MAGENTA\u$RESET@$MAGENTA\h$RESET \W]\$ $RESET"
 
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
+alias vi='nvim'
 
 source /usr/share/nvm/init-nvm.sh
 
