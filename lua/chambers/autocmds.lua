@@ -8,7 +8,13 @@ vim.api.nvim_create_autocmd("TermOpen", {
     end,
 })
 
--- Clear trailing white space on write
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "help", "man" },
+    callback = function()
+        vim.opt_local.spell = false
+    end,
+})
+
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     command = ":%s/\\s\\+$//e",
