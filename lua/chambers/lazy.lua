@@ -34,7 +34,6 @@ lazy.setup({
     { "hrsh7th/cmp-path" },
     { "hrsh7th/cmp-cmdline" },
 
-    { "lukas-reineke/indent-blankline.nvim" },
     { "akinsho/bufferline.nvim" },
     { "lewis6991/gitsigns.nvim" },
     { "windwp/nvim-autopairs" },

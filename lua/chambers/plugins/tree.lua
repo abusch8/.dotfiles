@@ -14,7 +14,13 @@ tree.setup({
     },
     actions = {
         expand_all = {
-            exclude = { ".git", "build", "dist", "node_modules", "target", },
+            exclude = {
+                ".git",
+                "build",
+                "dist",
+                "node_modules",
+                "target",
+            },
         },
     },
     hijack_cursor = true,

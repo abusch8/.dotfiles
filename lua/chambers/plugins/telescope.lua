@@ -9,7 +9,13 @@ local function find_files()
             width = 0.5,
             height = 0.5,
         },
-        file_ignore_patterns = { ".git", "build", "dist", "node_modules", "target" },
+        file_ignore_patterns = {
+            ".git",
+            "build",
+            "dist",
+            "node_modules",
+            "target",
+        },
     })
 end
 
