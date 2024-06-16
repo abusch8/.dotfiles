@@ -28,7 +28,6 @@ lualine.setup({
     options = {
         component_separators = "",
         section_separators = "",
-        globalstatus = true,
         refresh = {
             statusline = 500,
             tabline = 500,
