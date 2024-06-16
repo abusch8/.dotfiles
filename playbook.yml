@@ -16,7 +16,7 @@
     - name: Symlink .tmux.conf
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.tmux.conf"
-        dest: ~/.bashrc
+        dest: ~/.tmux.conf
         state: link
         force: true
 
