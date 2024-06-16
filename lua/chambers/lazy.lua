@@ -39,5 +39,7 @@ lazy.setup({
     { "windwp/nvim-autopairs" },
     { "numToStr/Comment.nvim" },
     { "L3MON4D3/LuaSnip" },
+
+    { "ThePrimeagen/harpoon", branch = "harpoon2", dependencies = { "nvim-lua/plenary.nvim" } },
 })
 
