@@ -1,10 +1,15 @@
 filetype plugin indent on
 syntax on
 
-set nocompatible
-set termguicolors
+let $BASH_ENV = "~/.aliasrc"
 
+set nocompatible
+
+" Appearance
+set termguicolors
 set title
+
+" Utils
 set ruler
 set showcmd
 set wildmenu
