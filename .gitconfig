@@ -3,3 +3,5 @@
 	email = abusch8@huskers.unl.edu
 [core]
 	editor = vim
+[credential]
+	helper = store
