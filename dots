@@ -1,2 +1,21 @@
 #!/bin/bash
-ansible-playbook playbook.yml --vault-password-file password
+
+function playbook() {
+    ansible-playbook playbook.yml --vault-password-file password
+}
+
+if [ $# -eq 0 ]; then
+    playbook
+elif [ $1 == "pull" ]; then
+    git pull
+    playbook
+elif [ $1 == "push" ]; then
+    if [ $# -eq 2 ]; then
+        git add --all
+        git commit -m "$2"
+        git push -u origin main
+    else
+        echo "Invalid"
+    fi
+fi
+

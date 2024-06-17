@@ -16,30 +16,22 @@ mason_lspconfig.setup({
 })
 
 local function lua_ls_setup()
-    local cwd = vim.loop.cwd()
-    local is_nvim_config = cwd:find(".config/nvim") or cwd:find(".dotfiles")
-
-    local settings = {
-        Lua = {
-            telemetry = {
-                enable = false,
+    lspconfig.lua_ls.setup({
+        settings = {
+            Lua = {
+                telemetry = {
+                    enable = false,
+                },
+                diagnostics = {
+                    globals = { "vim" },
+                    disable = { "undefined-field", "missing-fields" },
+                },
+                workspace = {
+                    library = vim.api.nvim_get_runtime_file("", true),
+                    checkThirdParty = false,
+                },
             },
         },
-    }
-
-    if is_nvim_config then
-        settings.Lua.workspace = {
-            library = vim.api.nvim_get_runtime_file("", true),
-            checkThirdParty = false,
-        }
-        settings.Lua.diagnostics = {
-            globals = { "vim" },
-            disable = { "undefined-field", "missing-fields" },
-        }
-    end
-
-    lspconfig.lua_ls.setup({
-        settings = settings,
     })
 end
 
