@@ -1,21 +1,21 @@
 #!/bin/bash
 
-function playbook() {
-    ansible-playbook playbook.yml --vault-password-file password
-}
+DOTS_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
-if [ $# -eq 0 ]; then
-    playbook
-elif [ $1 == "pull" ]; then
-    git pull
-    playbook
-elif [ $1 == "push" ]; then
-    if [ $# -eq 2 ]; then
-        git add --all
-        git commit -m "$2"
-        git push -u origin main
-    else
-        echo "Invalid"
-    fi
+cat <<'EOF'
+      _                     _                        _       _
+     | |                   | |                      | |     | |
+  ___| |__   __ _ _ __ ___ | |__   ___ _ __ ___   __| | ___ | |_ ___
+ / __| '_ \ / _` | '_ ` _ \| '_ \ / _ \ '__/ __| / _` |/ _ \| __/ __|
+| (__| | | | (_| | | | | | | |_) |  __/ |  \__ \| (_| | (_) | |_\__ \
+ \___|_| |_|\__,_|_| |_| |_|_.__/ \___|_|  |___(_)__,_|\___/ \__|___/
+
+EOF
+
+if [ $# -eq 1 ] && [ $1 == "sync" ]; then
+    git --git-dir=$DOTS_DIR/.git pull
+    echo
 fi
+
+ansible-playbook $DOTS_DIR/playbook.yml --vault-password-file $DOTS_DIR/password
 

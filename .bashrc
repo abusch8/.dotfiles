@@ -9,5 +9,7 @@ BOLD='\[\e[1m\]'
 
 PS1="[$MAGENTA\u$RESET@$MAGENTA\h$RESET \W]\$ $RESET"
 
-export PATH="$HOME/.cargo/bin:$PATH"
+DOTS_DIR=$(dirname "$(readlink -f "${DOTS_DIR[0]}")")
+
+export PATH="$DOTS_DIR:$PATH"
 

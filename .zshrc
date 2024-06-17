@@ -4,7 +4,8 @@ PS1='%B%F{magenta}%n%f@%F{magenta}%m%f %1~ %# %b'
 
 eval "$(fzf --zsh)"
 
-export TERM=xterm-256color
+DOTS_DIR=$(dirname "$(readlink -f "${(%):-%x}")")
 
-bindkey '\e[3;3~' kill-word
+export PATH="$DOTS_DIR:$PATH"
+export TERM=xterm-256color
 
