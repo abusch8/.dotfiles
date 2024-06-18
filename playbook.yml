@@ -2,7 +2,7 @@
 - name: .dotfiles
   hosts: localhost
   vars:
-    - current_shell: "{{ lookup('env', 'SHELL') }}"
+    current_shell: "{{ lookup('env', 'SHELL') }}"
   vars_files:
     - secrets.yml
   tasks:
