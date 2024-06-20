@@ -1,5 +1,5 @@
-local nonicons = require("nvim-nonicons")
 local tokyonight = require("tokyonight")
+local nonicons = require("nvim-nonicons")
 
 nonicons.setup({})
 

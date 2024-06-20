@@ -1,5 +1,6 @@
 local tree = require("nvim-tree")
-local nonicons = require("nvim-nonicons.extentions.nvim-tree")
+local tree_icons = require("nvim-nonicons.extentions.nvim-tree")
+local icons = require("nvim-nonicons")
 
 vim.keymap.set("n", "<C-b>", ":NvimTreeToggle<CR>")
 
@@ -9,7 +10,7 @@ tree.setup({
     },
     renderer = {
         icons = {
-            glyphs = nonicons.glyphs,
+            glyphs = tree_icons.glyphs,
         },
     },
     actions = {
@@ -29,6 +30,14 @@ tree.setup({
     },
     diagnostics = {
         enable = true,
+        show_on_dirs = true,
+        show_on_open_dirs = false,
+        icons = {
+            error = icons.get("x-circle") .. " ",
+            warning = icons.get("alert") .. " ",
+            info = icons.get("info") .. " ",
+            hint = icons.get("light-bulb") .. " ",
+        },
     },
 })
 

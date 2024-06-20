@@ -1,4 +1,5 @@
 local lualine = require("lualine")
+local icons = require("nvim-nonicons")
 
 local function show_macro_recording()
     local recording_register = vim.fn.reg_recording()
@@ -45,6 +46,12 @@ lualine.setup({
             },
             {
                 "diagnostics",
+                symbols = {
+                    error = icons.get("x-circle") .. " ",
+                    warn = icons.get("alert") .. " ",
+                    info = icons.get("info") .. " ",
+                    hint = icons.get("light-bulb") .. " ",
+                },
             },
             {
                 "recording",

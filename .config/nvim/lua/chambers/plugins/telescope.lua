@@ -1,6 +1,6 @@
 local telescope = require("telescope")
 local builtin = require("telescope.builtin")
-local nonicons = require("nvim-nonicons")
+local icons = require("nvim-nonicons")
 
 local function find_files()
     builtin.find_files({
@@ -29,7 +29,7 @@ vim.keymap.set("n", "<leader>fh", builtin.help_tags)
 
 telescope.setup({
     defaults = {
-        prompt_prefix = "  " .. nonicons.get("telescope") .. "  ",
+        prompt_prefix = "  " .. icons.get("telescope") .. "  ",
         selection_caret = " > ",
         entry_prefix = "   ",
     },
