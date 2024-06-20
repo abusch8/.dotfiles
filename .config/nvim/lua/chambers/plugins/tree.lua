@@ -11,7 +11,11 @@ tree.setup({
     renderer = {
         icons = {
             glyphs = tree_icons.glyphs,
+            show = {
+                git = false,
+            },
         },
+        highlight_git = "name",
     },
     actions = {
         expand_all = {
@@ -38,6 +42,9 @@ tree.setup({
             info = icons.get("info") .. " ",
             hint = icons.get("light-bulb") .. " ",
         },
+    },
+    filters = {
+        git_ignored = false,
     },
 })
 
