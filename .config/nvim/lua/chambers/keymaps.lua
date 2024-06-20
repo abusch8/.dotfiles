@@ -1,9 +1,6 @@
 vim.g.mapleader = " "
 
-vim.keymap.set("i", "<C-BS>", "<C-W>", { noremap = true })
 vim.keymap.set("i", "<A-BS>", "<C-W>", { noremap = true })
-
-vim.keymap.set("i", "<C-Del>", "<C-o>dw", { noremap = true })
 vim.keymap.set("i", "<A-Del>", "<C-o>dw", { noremap = true })
 
 vim.keymap.set("v", "<C-Insert>", "\"+y", { noremap = true })
@@ -17,4 +14,5 @@ vim.keymap.set("n", "qq", "q", { noremap = true })
 
 vim.keymap.set("n", "bt", ":bn<CR>", { noremap = true })
 vim.keymap.set("n", "bT", ":bp<CR>", { noremap = true })
+vim.keymap.set("n", "bl", "<C-^>", { noremap = true })
 
