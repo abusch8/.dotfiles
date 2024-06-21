@@ -1,6 +1,14 @@
 #!/bin/bash
 
-shopt -s expand_aliases
+
+case "$0" in
+    *bash*)
+        shopt -s expand_aliases
+        ;;
+    *zsh*)
+        setopt aliases
+        ;;
+esac
 
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'

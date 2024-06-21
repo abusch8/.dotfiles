@@ -14,6 +14,7 @@ tree.setup({
             show = {
                 git = false,
             },
+            symlink_arrow = " -> ",
         },
         highlight_git = "name",
     },
