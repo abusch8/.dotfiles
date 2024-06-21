@@ -43,6 +43,14 @@
         force: true
       when: current_shell.endswith('zsh')
 
+    - name: Symlink .zshenv
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.zshenv"
+        dest: ~/.zshenv
+        state: link
+        force: true
+      when: current_shell.endswith('zsh')
+
     - name: Ensure .config directory exists
       ansible.builtin.file:
         path: ~/.config
