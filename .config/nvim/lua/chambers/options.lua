@@ -1,7 +1,7 @@
 vim.cmd[[ filetype plugin indent on ]]
 vim.cmd[[ syntax enable ]]
 
-if os.getenv("BASH_VERSION") ~= nil then vim.fn.setenv("BASH_ENV", "~/.aliasrc") end
+if vim.o.shell:find("bash") ~= nil then vim.fn.setenv("BASH_ENV", "~/.aliasrc") end
 
 -- Appearance
 vim.opt.termguicolors = true
