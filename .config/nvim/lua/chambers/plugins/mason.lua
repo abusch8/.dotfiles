@@ -7,10 +7,8 @@ mason.setup({})
 
 mason_lspconfig.setup({
     ensure_installed = {
-        "eslint",
+        "bashls",
         "lua_ls",
-        "rust_analyzer",
-        "tsserver",
         "vimls",
     },
 })
