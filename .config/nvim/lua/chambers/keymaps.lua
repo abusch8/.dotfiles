@@ -12,7 +12,7 @@ vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float(nil, { sco
 vim.keymap.set("n", "q", "<nop>", { noremap = true })
 vim.keymap.set("n", "qq", "q", { noremap = true })
 
-vim.keymap.set("n", "bt", ":bn<CR>", { noremap = true })
-vim.keymap.set("n", "bT", ":bp<CR>", { noremap = true })
-vim.keymap.set("n", "bl", "<C-^>", { noremap = true })
+vim.keymap.set("n", "nt", ":bn<CR>", { noremap = true })
+vim.keymap.set("n", "nT", ":bp<CR>", { noremap = true })
+vim.keymap.set("n", "nl", "<C-^>", { noremap = true })
 
