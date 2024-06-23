@@ -16,6 +16,11 @@ tree.setup({
             },
             symlink_arrow = " -> ",
         },
+        special_files = {
+            "Makefile",
+            "README.md",
+            "readme.md",
+        },
         highlight_git = "name",
     },
     actions = {
