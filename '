@@ -8,38 +8,30 @@ bold_italic_font JetBrains Mono Bold Italic
 disable_ligatures always
 symbol_map U+f101-U+f25c nonicons
 
-# Cursor customization
-cursor_shape block
-cursor_blink_interval -1
-cursor_stop_blinking_after 0
-
 # Scrollback
 scrollback_lines 10000
 
 # Performance tuning
 sync_to_monitor yes
-
-# Terminal bell
 enable_audio_bell no
 
-# Window layout
+# Advanced
+allow_remote_control yes
+share_connection yes
+
+shell_integration no-cursor
+
 remember_window_size no
 initial_window_width 900
 initial_window_height 520
 placement_strategy center
 
-# Color scheme
 background_opacity 0.85
 background_blur 32
 dynamic_background_opacity yes
 
-# Advanced
-allow_remote_control yes
-share_connection yes
-shell_integration no-cursor
-
-# Keyboard shortcuts
 map ctl+shift+f2 edit_config_file
+
 map ctl+shift+f10 toggle_maximized
 map ctl+shift+f11 toggle_fullscreen
 
