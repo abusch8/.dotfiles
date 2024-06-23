@@ -1,34 +1,33 @@
 local cmp = require("cmp")
 local luasnip = require("luasnip")
-local lspkind = require("lspkind")
 local icons = require("nvim-nonicons")
 
 local symbol_map =  {
-    Text = icons.get("typography") .. " ",
-    Method = icons.get("package") .. " ",
-    Function = icons.get("package") .. " ",
-    Constructor = icons.get("class") .. " ",
-    Field = icons.get("field") .. " ",
-    Variable = icons.get("variable") .. " ",
-    Class = icons.get("class") .. " ",
-    Interface = icons.get("interface") .. " ",
-    Module = icons.get("container") .. " ",
-    Property = icons.get("tag") .. " ",
-    Unit = icons.get("constant") .. " ",
-    Value = icons.get("number") .. " ",
-    Enum = icons.get("hash") .. " ",
-    Keyword = icons.get("keyword") .. " ",
-    Snippet = icons.get("snippet") .. " ",
-    Color = icons.get("paintbrush") .. " ",
-    File = icons.get("file") .. " ",
-    Reference = icons.get("mention") .. " ",
-    Folder = icons.get("file-directory") .. " ",
-    EnumMember = icons.get("constant") .. " ",
-    Constant = icons.get("constant") .. " ",
-    Struct = icons.get("struct") .. " ",
-    Event = icons.get("zap") .. " ",
-    Operator = icons.get("plus-circle") .. " ",
-    TypeParameter = icons.get("type") .. " ",
+    Text = icons.get("typography"),
+    Method = icons.get("package"),
+    Function = icons.get("package"),
+    Constructor = icons.get("class"),
+    Field = icons.get("field"),
+    Variable = icons.get("variable"),
+    Class = icons.get("class"),
+    Interface = icons.get("interface"),
+    Module = icons.get("container"),
+    Property = icons.get("tag"),
+    Unit = icons.get("constant"),
+    Value = icons.get("number"),
+    Enum = icons.get("hash"),
+    Keyword = icons.get("keyword"),
+    Snippet = icons.get("snippet"),
+    Color = icons.get("paintbrush"),
+    File = icons.get("file"),
+    Reference = icons.get("mention"),
+    Folder = icons.get("file-directory"),
+    EnumMember = icons.get("constant"),
+    Constant = icons.get("constant"),
+    Struct = icons.get("struct"),
+    Event = icons.get("zap"),
+    Operator = icons.get("plus-circle"),
+    TypeParameter = icons.get("type"),
 }
 
 cmp.setup({
@@ -44,12 +43,11 @@ cmp.setup({
         },
     },
     formatting = {
-        format = lspkind.cmp_format({
-            mode = "symbol_text",
-            symbol_map = symbol_map,
-        }),
+        format = function(_, item)
+            item.kind = symbol_map[item.kind] .. "  " .. item.kind
+            return item
+        end,
     },
-    window = { },
     mapping = cmp.mapping.preset.insert({
         ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior.Select }),
         ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior.Select }),
@@ -75,6 +73,12 @@ cmp.setup.cmdline({ "/", "?" }, {
 })
 
 cmp.setup.cmdline(":", {
+    formatting = {
+        format = function(_, item)
+            item.kind = ""
+            return item
+        end,
+    },
     mapping = cmp.mapping.preset.cmdline(),
     sources = cmp.config.sources({
         { name = "path" },
@@ -82,11 +86,5 @@ cmp.setup.cmdline(":", {
         { name = "cmdline" },
     }),
     matching = { disallow_symbol_nonprefix_matching = false },
-    formatting = {
-        format = function(_, item)
-            item.kind = ''
-            return item
-        end,
-    },
 })
 
