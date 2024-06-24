@@ -24,5 +24,12 @@ lazy.setup({
     { "numToStr/Comment.nvim" },
     { "smjonas/inc-rename.nvim" },
     { "L3MON4D3/LuaSnip" },
+
+    {
+        "iamcco/markdown-preview.nvim",
+        cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+        ft = { "markdown" },
+        build = function() vim.fn["mkdp#util#install"]() end,
+    },
 })
 
