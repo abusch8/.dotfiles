@@ -35,6 +35,14 @@
         force: true
       when: current_shell.endswith('bash')
 
+    - name: Symlink .bash_profile
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.bash_profile"
+        dest: ~/.bash_profile
+        state: link
+        force: true
+      when: current_shell.endswith('bash')
+
     - name: Symlink .zshrc
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.zshrc"
@@ -47,6 +55,14 @@
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.zshenv"
         dest: ~/.zshenv
+        state: link
+        force: true
+      when: current_shell.endswith('zsh')
+
+    - name: Symlink .zsh_profile
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.zsh_profile"
+        dest: ~/.zsh_profile
         state: link
         force: true
       when: current_shell.endswith('zsh')
