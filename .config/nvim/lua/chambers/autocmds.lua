@@ -9,7 +9,7 @@ vim.api.nvim_create_autocmd("TermOpen", {
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-    pattern = { "help", "man" },
+    pattern = { "help", "man", "qf" },
     callback = function()
         vim.opt_local.spell = false
     end,
@@ -18,5 +18,12 @@ vim.api.nvim_create_autocmd("FileType", {
 vim.api.nvim_create_autocmd("BufWritePre", {
     pattern = "*",
     command = ":%s/\\s\\+$//e",
+})
+
+vim.api.nvim_create_autocmd("DiagnosticChanged", {
+    pattern = "*",
+    callback = function()
+        vim.diagnostic.setqflist({ open = false })
+    end,
 })
 

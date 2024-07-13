@@ -13,5 +13,9 @@ vim.keymap.set("n", "gbn", ":bn<CR>", { noremap = true })
 vim.keymap.set("n", "gbp", ":bp<CR>", { noremap = true })
 vim.keymap.set("n", "gbl", "<C-^>", { noremap = true })
 
+vim.keymap.set("n", "gec", ":silent! cc<CR>", { noremap = true })
+vim.keymap.set("n", "gen", ":silent! cn<CR>", { noremap = true })
+vim.keymap.set("n", "gep", ":silent! cp<CR>", { noremap = true })
+
 vim.keymap.set("n", "<leader>e", function() vim.diagnostic.open_float(nil, { scope = "line" }) end)
 

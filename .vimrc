@@ -110,5 +110,5 @@ execute "set <FocusLost>=\<Esc>[O"
 let &t_ST = "\e[22;2t"
 let &t_RT = "\e[23;2t"
 
-let &t_ut=''
+let &t_ut=""
 
