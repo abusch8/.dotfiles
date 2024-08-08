@@ -5,9 +5,8 @@
 
 MAGENTA='\[\e[35m\]'
 RESET='\[\e[0m\]'
-BOLD='\[\e[1m\]'
 
-PS1="[$MAGENTA\u$RESET@$MAGENTA\h$RESET \W]\$ $RESET"
+PS1="[$MAGENTA\u$RESET@$MAGENTA\h$RESET \W]\$ "
 
 DOTS_DIR=$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")
 
