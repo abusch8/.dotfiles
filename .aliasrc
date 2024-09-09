@@ -2,15 +2,14 @@
 
 [[ -n $BASH_VERSION ]] && shopt -s expand_aliases
 
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -l'
-alias vi='nvim'
-
-function gg() {
-    git add --all
+function gg {
+    git add :/ -A
     git commit -m "$1"
     git push
 }
 
-alias gg=gg
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'
+alias vi='nvim'
+alias gg='gg'
 
