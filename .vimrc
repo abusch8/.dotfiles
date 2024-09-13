@@ -8,6 +8,13 @@ set nocompatible
 " Appearance
 set termguicolors
 set title
+set laststatus=1
+set statusline=
+set statusline+=%<%f\ %h%w%m%r%=
+set statusline+=\ %{&ff}
+set statusline+=\ %{&fileencoding}
+set statusline+=%10.(%l:%c%V%)
+set statusline+=\ %P
 
 " Utils
 set ruler

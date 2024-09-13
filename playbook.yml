@@ -80,6 +80,13 @@
         state: link
         force: true
 
+    - name: Symlink .config/fastfetch/
+      ansible.builtin.file:
+        src: "{{ playbook_dir }}/.config/fastfetch"
+        dest: ~/.config/fastfetch
+        state: link
+        force: true
+
     - name: Symlink .config/nvim/
       ansible.builtin.file:
         src: "{{ playbook_dir }}/.config/nvim"
