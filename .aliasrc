@@ -11,6 +11,3 @@ function gg {
 alias ls='ls --color=auto'
 alias ll='ls --color=auto -l'
 alias gg='gg'
-alias vi='vim'
-
-alias neofetch='fastfetch'

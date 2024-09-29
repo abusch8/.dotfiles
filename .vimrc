@@ -68,7 +68,7 @@ hi clear SpellCap
 hi SpellBad cterm=undercurl ctermfg=NONE guifg=NONE gui=undercurl guisp=red
 hi SpellCap cterm=undercurl ctermfg=None guifg=NONE gui=undercurl guisp=blue
 
-vnoremap p "_dP
+" vnoremap p "_dP
 
 " Clear trailing white space on write
 autocmd BufWritePre * %s/\s\+$//e
