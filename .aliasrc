@@ -2,12 +2,18 @@
 
 [[ -n $BASH_VERSION ]] && shopt -s expand_aliases
 
+alias ls='ls --color=auto'
+alias ll='ls --color=auto -l'
+
 function gg {
     git add :/ -A
     git commit -m "$1"
     git push
 }
 
-alias ls='ls --color=auto'
-alias ll='ls --color=auto -l'
+function ff {
+    find ${2:-.} -type f -exec grep -nH $1 {} \;
+}
+
 alias gg='gg'
+alias ff='ff'
